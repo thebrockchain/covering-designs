@@ -3,6 +3,8 @@
 **Brock Falfas** (brock@thebrockchain.com)
 7 August 2026
 
+DOI: [10.5281/zenodo.21834602](https://doi.org/10.5281/zenodo.21834602)
+
 This repository contains a (28,13,4) covering design with **53 blocks**, improving
 the best known upper bound on the covering number C(28,13,4) from 54 to 53.
 
@@ -109,4 +111,5 @@ over. `verify.py` is MIT.
 
 ## Citation
 
-If you use this design, cite the Zenodo record. DOI to be added on publication.
+Falfas, B. (2026). *A (28,13,4) covering design with 53 blocks* [Dataset].
+Zenodo. https://doi.org/10.5281/zenodo.21834602
