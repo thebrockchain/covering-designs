@@ -1,18 +1,24 @@
-# A (28,13,4) covering design with 53 blocks
+# Two covering design records: C(28,13,4) in 53 blocks and C(32,13,4) in 95
 
 **Brock Falfas** (brock@thebrockchain.com)
-7 August 2026
+7 and 8 August 2026
 
 DOI: [10.5281/zenodo.21834602](https://doi.org/10.5281/zenodo.21834602)
 
-This repository contains a (28,13,4) covering design with **53 blocks**, improving
-the best known upper bound on the covering number C(28,13,4) from 54 to 53.
+This repository contains two covering designs, each improving a best known
+upper bound that had stood for about seventeen years:
 
-The previous best of 54 blocks was found by Kamal Fadlaoui on 22 September 2008
-and had stood since. The proven lower bound (Schonheim) is 39, so the true value
-of C(28,13,4) lies somewhere in [39, 53].
+- A (28,13,4) covering design with **53 blocks**, improving C(28,13,4) from 54
+  to 53. The 54-block design was found by Kamal Fadlaoui on 22 September 2008.
+  The proven lower bound (Schonheim) is 39, so the true value lies in [39, 53].
+  Design: [`records/C28_13_4_53blocks.txt`](records/C28_13_4_53blocks.txt).
+- A (32,13,4) covering design with **95 blocks**, improving C(32,13,4) from 96
+  to 95. The 96-block design was found by Kamal Fadlaoui on 16 September 2009.
+  The listed lower bound is 72, so the true value lies in [72, 95].
+  Design: [`records/C32_13_4_95blocks.txt`](records/C32_13_4_95blocks.txt).
 
-The design is in [`records/C28_13_4_53blocks.txt`](records/C28_13_4_53blocks.txt).
+The (28,13,4) design was verified independently by Dan Gordon, creator of the
+La Jolla Covering Repository, using his own code.
 
 ## What a covering design is
 
@@ -36,12 +42,14 @@ You do not have to take my word for any of it. The design either covers all
 
 ```bash
 python3 src/verify.py 28 13 4 records/C28_13_4_53blocks.txt
+python3 src/verify.py 32 13 4 records/C32_13_4_95blocks.txt
 ```
 
 Expected output:
 
 ```
 OK: C(28,13,4) covering verified, 53 blocks, all 20475 4-subsets covered
+OK: C(32,13,4) covering verified, 95 blocks, all 35960 4-subsets covered
 ```
 
 [`src/verify.py`](src/verify.py) is deliberately short and dependency free, so it
@@ -78,30 +86,36 @@ checkable; the tool that found it is not part of the result.
 
 ## Provenance
 
-The design was found at 03:18 EDT on 7 August 2026, on a single Apple M5.
+The (28,13,4) design was found at 03:18 EDT on 7 August 2026, on a single
+Apple M5. The starting point was the 54-block design of Fadlaoui with one
+block removed, leaving 53 blocks and **110 of the 20,475 four-subsets
+uncovered**. The search closed all 110. The resulting design shares
+**no blocks** with the 2008 design. Every block differs. The 54-block design
+is included in [`reference/`](reference/) so that this can be checked directly.
 
-The starting point was the 54-block design of Fadlaoui with one block removed,
-leaving 53 blocks and **110 of the 20,475 four-subsets uncovered**. The search
-closed all 110.
-
-The resulting design shares **no blocks** with the 2008 design. Every block
-differs. The 54-block design is included in [`reference/`](reference/) so that
-this can be checked directly.
+The (32,13,4) design was found at 00:05 EDT on 8 August 2026 by the same
+program on the same machine, warm started the same way: the 96-block design of
+Fadlaoui with one block removed, cycling through each choice of removed block.
+It also shares **no blocks** with the design it replaces. The 96-block design
+is included in [`reference/`](reference/) as well.
 
 ## Files
 
 | Path | What it is |
 | --- | --- |
 | `records/C28_13_4_53blocks.txt` | The 53-block design. One block per line, 13 space separated values in 1..28. |
+| `records/C32_13_4_95blocks.txt` | The 95-block design. One block per line, 13 space separated values in 1..32. |
 | `src/verify.py` | Independent verifier. No dependencies. |
 | `reference/C28_13_4_54blocks_Fadlaoui2008.txt` | The previous 54-block design, for comparison. |
+| `reference/C32_13_4_96blocks_Fadlaoui2009.txt` | The previous 96-block design, for comparison. |
 
 ## Data sources
 
 Known bounds and previous designs were taken from the La Jolla Covering
 Repository (https://dmgordo.github.io/, archived data, CC BY 4.0) and from the
 Covering Repository (https://coveringrepository.com/), which maintains the live
-tables and listed C(28,13,4) at 54 blocks as of 7 August 2026.
+tables and listed C(28,13,4) at 54 blocks as of 7 August 2026 and C(32,13,4)
+at 96 blocks as of 8 August 2026.
 
 ## License
 
@@ -111,5 +125,6 @@ over. `verify.py` is MIT.
 
 ## Citation
 
-Falfas, B. (2026). *A (28,13,4) covering design with 53 blocks* [Dataset].
-Zenodo. https://doi.org/10.5281/zenodo.21834602
+Falfas, B. (2026). *New covering designs: C(28,13,4) in 53 blocks and
+C(32,13,4) in 95 blocks* [Dataset]. Zenodo.
+https://doi.org/10.5281/zenodo.21834602
