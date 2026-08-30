@@ -1,3 +1,4 @@
+<!-- crew: Napoleon -->
 # Two covering design records: C(28,13,4) in 53 blocks and C(32,13,4) in 95
 
 **Brock Falfas** (brock@thebrockchain.com)
