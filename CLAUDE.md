@@ -39,6 +39,10 @@ Expected: both print OK, no missing 4 subsets.
 
 ## Fleet rules
 
-Auto loaded from [brock/CLAUDE.md](../brock/CLAUDE.md). This repo is public,
-so the "no dashes" and no AI look rules bite hardest here. The math hunts as
-a whole stay off the public portfolio.
+The fleet rules live in the brock root's CLAUDE.md. This repo is public, so
+the "no dashes" and no AI look rules bite hardest here. The math hunts as a
+whole stay off the public portfolio. **Auto-loaded only on a MERGED
+checkout** ([../CLAUDE.md](../CLAUDE.md), Brockchain-Personal), where the
+brock root is this folder's parent; on a SPLIT one it is a sibling
+([../brock/CLAUDE.md](../brock/CLAUDE.md), Brockchains-MBP) and nothing
+loads it for you, so open it yourself.
